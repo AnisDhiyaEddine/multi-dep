@@ -1,0 +1,20 @@
+sudo: required 
+services:
+ - docker
+
+before_install: 
+ - docker build -t anisdhiyaeddine/dockerizedreactapp -f Dockerfile.dev .
+scripts: 
+ - docker run -e CI=true anisdhiyaeddine/dockerizedreactapp npm run test
+deploy: 
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "ola"
+  env: "Ola-env" 
+  bucket_name: "elasticbeanstalk-eu-west-3-769641087123"
+  bucket_path: "ola"
+  on: 
+   branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_acces_key: $AWS_SECRET_KEY
+
