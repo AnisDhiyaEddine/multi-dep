@@ -20,3 +20,6 @@ after_success:
   - docker push anisdhiyaeddine/multi-nginx 
   - docker push anisdhiyaeddine/multi-server
   - docker push anisdhiyaeddine/multi-worker
+
+
+  #trigger travis dep
