@@ -22,4 +22,4 @@ after_success:
   - docker push anisdhiyaeddine/multi-worker
 
 
-  #trigger travis dep
+  #trigger travis deploy
