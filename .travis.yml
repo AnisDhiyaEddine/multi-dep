@@ -15,11 +15,10 @@ after_success:
   - docker build -t anisdhiyaeddine/multi-worker ./worker
   # Log in 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take this images and push them to dockerhub
+
+
   - docker push anisdhiyaeddine/multi-client
   - docker push anisdhiyaeddine/multi-nginx 
   - docker push anisdhiyaeddine/multi-server
   - docker push anisdhiyaeddine/multi-worker
 
-
-  #trigger travis deploy
